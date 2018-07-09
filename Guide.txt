@@ -1,0 +1,153 @@
+// Materi tiap lab diajarkan dengan estimasi 
+// waktu +-1 jam, termasuk excercise
+
+// Masukkan materi yang banyak tidak apa2, 
+// asalkan tandai mana materi yang tidak perlu dijelaskan
+// alias cukup dipelajari sendiri
+
+EXEC = Excercise - Latihan ngoding yg dikerjakan di kelas
+        (apakah perlu dikumpulkan?)
+TASK = Tugas yg dikerjakan di rumah dan 
+        dikumpulkan dengan deadline +- 7 hari
+
+Referensi materi:
+https://drive.google.com/open?id=12r4ZkjT41WrIzcyMjJD1JmEEUkmzRJkx
+============================================
+
+Lab1 - Program Sederhana
+- input
+- import
+- assignment
+- conversion
+- output
+- save as module
+- errors
+- syntax
+- module
+- whitespaces
+- continuation
+- comments
+
+EXEC: Profit calculator
+TASK: Circle area & perimeter
+
+Lab2 - Variabel
+- Identifiers
+-- Naming conventions
+-- Reserved words
+- Expressions*
+-- Literals*
+- Variable
+-- NameError
+-- Namespace*
+- Type
+-- Conversion
+- Operator
+-- Precedence
+- Augmented Assignment
+- Modules
+- Simultaneous Assignment
+
+EXEC: Calculator
+TASK: Parabola Result
+
+Lab3 - Percabangan/Seleksi
+- Selection
+- Boolean
+-- equal vs. same
+- if statement
+- if else statement (Two way Decisions)
+- if elif else statement (Multi way)
+
+EXEC: Number to letter score
+TASK: Root of quadratic equation
+
+Lab4 - Perulangan/Repetisi
+- while loop (undefinite loop)
+- for loop (definite loop)
+--  break, continue, pass
+- range
+- list
+
+EXEC: left triangle stars
+TASK: Future value w/ retry option
+
+Lab5 - String slicing & manipulation
+- String
+- Multiline string
+- Escape sequences/char
+- String representation
+- Index
+- Slicing
+-- Extended Slicing
+- Iterable
+-- Enumerate*
+- Operation
+- Comparison
+- String function
+- String method
+- String formatting
+-- Floating point precision
+
+EXEC: Acronym
+TASK: Ciphertext
+
+Lab6 - Struktur Data: List & Tuple
+- List
+-- Same as string
+-- List are mutable
+-- List function
+-- List method
+-- Mutability, reference, copying
+- Tuple
+-- Same as list, but immutable
+-- Can't: append, extend, del
+- List-Tuple Conversion
+
+EXEC: 
+TASK: 
+
+Lab7 - Struktur Data: Dictionary & Set
+- Dictionary
+-- Operation, method
+- Set
+-- Operation, method
+- Dict & Ser Comprehension
+
+EXEC:
+TASK: Word frequency
+
+Lab8 - Fungsi
+- function
+- parameter
+- Return vs print()
+- modifying parameter
+- why use functions?
+
+EXEC: 
+TASK: Pascal triangle
+
+Lab9 - Rekursi
+- rekursive function
+-- example
+-- code in python
+- recursion vs iteration
+
+EXEC: Multiplication
+TASK: Palindrome
+
+Lab10 - GUI
+- why GUI
+- Tkinter
+-- window
+-- label
+-- button
+-- pack
+-- entry
+-- event processing
+-- color,font,text formatting
+-- Grid manager
+
+EXEC: Counter
+TASK: Calculator
+
