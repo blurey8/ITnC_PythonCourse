@@ -96,7 +96,11 @@ style **bold** untuk istilah penting
 
 ### Deskripsi Soal
 
+#### Jadi, ceritanya...
+
 < Cerita soal >
+
+#### Spesifikasi program
 
 < Spesifikasi soal >
 

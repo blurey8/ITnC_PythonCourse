@@ -1,34 +1,30 @@
-# Tutorial 0 : < Judul Tutorial >
+# Tutorial 2 : Variable dan Tipe Data
 
 ## Daftar Isi
 
-- [Tutorial 1 : Program Sederhana](#tutorial-1--program-sederhana)
+- [Tutorial 2 : Variable dan Tipe Data](#tutorial-2--variable-dan-tipe-data)
   - [Daftar Isi](#daftar-isi)
-  - [IDLE](#idle)
-    - [Membuka IDLE](#membuka-idle)
-    - [Membuat *file* kode Python](#membuat-file-kode-python)
-    - [Menyimpan *module* python](#menyimpan-module-python)
-    - [Menjalankan program](#menjalankan-program)
-  - [Membuat program sederhana](#membuat-program-sederhana)
-    - [Meminta masukan *(input)*](#meminta-masukan-input)
+  - [Identifiers](#identifiers)
+      - [Naming Conventions](#naming-conventions)
+      - [Reserved Words](#reserved-words)
+    - [Variable](#variable)
       - [Assignment](#assignment)
-      - [Konversi](#konversi)
-    - [Mencetak keluaran *(print)*](#mencetak-keluaran-print)
-  - [Tambahan](#tambahan)
-    - [Errors](#errors)
-    - [Syntax](#syntax)
-    - [Whitespace](#whitespace)
-    - [Continuation](#continuation)
-    - [Comments](#comments)
-    - [Dokumentasi](#dokumentasi)
-  - [Latihan : *Profit Calculator*](#latihan--profit-calculator)
-  - [Tugas : *Circle Area & Perimeter*](#tugas--circle-area--perimeter)
+      - [Simultaneous Assignment](#simultaneous-assignment)
+    - [Tipe Data](#tipe-data)
+      - [Konversi Tipe Data](#konversi-tipe-data)
+      - [Operator untuk Integer & Float](#operator-untuk-integer--float)
+        - [Presedensi operator](#presedensi-operator)
+      - [Augmented Assignment](#augmented-assignment)
+  - [Modules](#modules)
+  - [Latihan : *Simple Calculator*](#latihan--simple-calculator)
+  - [Tugas : *Parabola Result*](#tugas--parabola-result)
     - [Deskripsi Soal](#deskripsi-soal)
+      - [Jadi, Ceritanya...](#jadi-ceritanya)
+      - [Spesifikasi program](#spesifikasi-program)
       - [Contoh](#contoh)
       - [Hint](#hint)
     - [Bonus](#bonus)
     - [Komponen penilaian](#komponen-penilaian)
-
 
 ## Identifiers
 
@@ -88,7 +84,20 @@ Untuk memasangkan suatu nilai dengan variable, lakukan *assignment*.
 12000
 ```
 
-#### Tipe Data
+#### Simultaneous Assignment
+
+Di Python, assignment dapat dilakukan untuk banyak variable dalam satu baris
+
+```py
+>>> x, y = 7, 10
+>>> print(x)
+7
+>>> print(y)
+10
+>>> 
+```
+
+### Tipe Data
 
 Variable tidak hanya dapat menampung nilai yang berbentuk angka saja, tetapi bisa juga tulisan dan tipe-tipe lainnya.
 Berikut tipe-tipe data yang ada di python dan contohnya:
@@ -122,67 +131,260 @@ Tipe data pada variable berfungsi untuk menentukan operasi apa yang dapat dilaku
 
 #### Konversi Tipe Data
 
-*to be continued...*
+Hasil input user adalah string sehingga harus dikonversi menjadi integer jika input adalah angka.
 
-<!-- TODO: lanjutkanP -->
+Cara mengkonversi tipe input:
+```py
+input_user_str = input(Masukkan angka:)
+input_user_int = int(input_user_str)
+```
+atau
+```py
+input_user_str = int(input(Masukkan angka:))
+```
+
+Fungsi untuk konversi tipe:
+- `int(sebuah_var)` mengembalikan integer
+- `float(sebuah_var)` mengembalikan float
+- `str(sebuah_var)` mengembalikan string
+
+**contoh:**
+`int("2")` mengembalikan 2
+`int(2.1)` mengembalikan 2 (dibulatkan ke bawah)
+`int("2.1")` *error*
+
+`float(2)` mengembalikan 2.0
+`float("2")` mengembalikan 2.0
+`float("2.1")` mengembalikan 2.1
+
+`str(2)` mengembalikan "2"
+`str(2.0)` mengembalikan "2.0"
+`str("abc")` mengembalikan "abc"
+
+#### Operator untuk Integer & Float
+
+`+` penjumlahan
+`-` pengurangan
+`*` perkalian
+`**` perpangkatan
+`/` pembagian
+`//` pembagian ke bawah
+`%` modulo (sisa)
+
+**contoh:**
+```py
+a = 10
+b = 3
+
+print(a + b)  # Output: 13
+print(a - b)  # Output: 7
+print(a * b)  # Output: 30
+print(a ** b) # Output: 100
+print(a / b)  # Output: 3.333333333
+print(a // b) # Output: 3
+print(a % b)  # Output: 1
+```
+
+Jika ada integer dan float pada *expression* yang sama, maka hasilnya adalah float
+`42 * 3` mengasilkan 126
+`42.0 * 3` mengasilkan 126.0
+
+##### Presedensi operator
+
+Presedensi adalah urutan operator yang dikerjakan terlebih dahulu. Presedensi pada Python kurang lebih sama seperti presedensi pada matematika.
+
+
+| Operator    | Deskripsi                |
+| :---------: | ------------------------ |
+| ()          | Tanda kurung             |
+| **          | Perpangkatan             |
+| +x, -x      | Positif, Negative        |
+| *, /, %, // | Perkalian, Pembagian     |
+| +, -        | Penjumlahan, Pengurangan |
+
+> Selengkapnya lihat di [dokumentasi Python 3.7](https://docs.python.org/3/reference/expressions.html#operator-precedence)
+
+#### Augmented Assignment
+
+Augmented assignment adalah penggabungan dari operasi dan assignment. Shortcut ini biasa digunakan untuk penambahan/pengurangan nilai.
+
+| Cara cepat    | Ekivalen              |
+| ------------- | --------------------- |
+| `my_int += 2` | `my_int = my_int + 2` |
+| `my_int -= 2` | `my_int = my_int - 2` |
+| `my_int *= 2` | `my_int = my_int * 2` |
+| `my_int /= 2` | `my_int = my_int / 2` |
+
+## Modules
+
+Modules adalah file yang bisa di-*import* ke program Python kalian. Module berisi konten-konten yang dapat memudahkan dalam membuat program.
+Contohnya adalah **math** module yang berisi hal-hal yang berhubungan dengan matematika.
+
+contoh:
+```py
+>>> import math     # sebelum menggunakan sebuah module, import terlebih dahulu
+>>> print(math.pi)  # sebuah constant pi di math module
+3.141592653589793
+>>> print(math.sqrt(49)) # sebuah fungsi akar di math module
+7.0
+>>> help(math)      # melihat info module math
+...
+>>> help(math.sin)  # melihat info tenteng fungsi sin
+...
+```
+
+<!-- TODO: Complete this -->
+
+## Tambahan
+
+### Algoritma: Max of Three
+
+*written soon*
 
 ---
 
-## Latihan : *< Judul Latihan >*
+## Latihan : *Simple Calculator*
 
-< spesifikasi program >
+Buatlah program yang meminta masukan dua angka kemudian memberikan keluaran hasil-hasil dari beberapa operasi matematika.
 
 **contoh:**
 ```
-< contoh simulasi program 1 >
+Masukkan angka pertama : 14
+Masukkan angka kedua   : 3
+
+14 + 3 = 17
+14 - 3 = 11
+14 * 3 = 42
+14 ** 3 = 2744
+14 / 3 = 4.666666666666667
+14 // 3 = 4
+14 % 3 = 2
+
 ```
 ```
-< contoh simulasi program 2 >
+Masukkan angka pertama : 5
+Masukkan angka kedua   : 21
+5 + 21 = 26
+5 - 21 = -16
+5 * 21 = 105
+5 ** 21 = 476837158203125
+5 / 21 = 0.23809523809523808
+5 // 21 = 0
+5 % 21 = 5
 ```
 ```
-< contoh simulasi program 3 >
+Masukkan angka pertama : 10
+Masukkan angka kedua   : -2
+10 + -2 = 8
+10 - -2 = 12
+10 * -2 = -20
+10 ** -2 = 0.01
+10 / -2 = -5.0
+10 // -2 = -5
+10 % -2 = 0
 ```
-**Hint:** < info yang membantu >
+**Hint:** Tidak ada
 
 ---
 
-## Tugas : *< Judul Tugas >*
+## Tugas : *Parabola Result*
 
 ### Deskripsi Soal
 
+#### Jadi, Ceritanya...
+
 < Cerita soal >
 
-< Spesifikasi soal >
+#### Spesifikasi program
+
+Sebuah parabola mempunyai rumus umum **y = ax<sup>2</sup> + bx + c**. Program akan meminta input nilai a, b, c, dan x nya (a, b, c, x adalah integer). Kemudian program akan mengeluarkan nilai dari y.
+
+```
+Rumus umum parabola: y = ax^2 + bx + c
+
+Masukkan nilai a : <nilai a>
+Masukkan nilai b : <nilai b>
+Masukkan nilai c : <nilai c>
+
+Rumus parabola: y = <rumus parabola nya>
+
+Masukkan nilai x : <nilai x>
+Nilai y pada x = 7 adalah <nilai y>
+```
 
 #### Contoh
 
 ```
-< contoh simulasi program 1 >
+Rumus umum parabola: y = ax^2 + bx + c
+
+Masukkan nilai a : 1
+Masukkan nilai b : 3
+Masukkan nilai c : 2
+
+Rumus parabola: y = 1x^2 + 3x + 2
+
+Masukkan nilai x : 7
+Nilai y pada x = 7 adalah 72
 ```
 ```
-< contoh simulasi program 2 >
+Rumus umum parabola: y = ax^2 + bx + c
+
+Masukkan nilai a : -2
+Masukkan nilai b : -5
+Masukkan nilai c : 144
+
+Rumus parabola: y = -2x^2 + -5x + 144
+
+Masukkan nilai x : 10
+Nilai y pada x = 10 adalah -106
 ```
 ```
-< contoh simulasi program 3 >
+Rumus umum parabola: y = ax^2 + bx + c
+
+Masukkan nilai a : 0
+Masukkan nilai b : 5
+Masukkan nilai c : 0
+
+Rumus parabola: y = 0x^2 + 5x + 0
+
+Masukkan nilai x : 23
+Nilai y pada x = 23 adalah 115
 ```
 
 #### Hint
 
-< info yang membantu >
+Fungsi `print` memiliki atribut `sep` (separator) untuk menentukan pemisah antar nilai yang di-print. Jika tidak ditulis, maka default nya adalah spasi (`sep=" "`)
 
 ### Bonus
 
-< tambahan spesifikasi untuk menambah nilai>
+Tambahkan link search dari google untuk menampilkan gambar dari kurva tersebut. Google memiliki link search seperti berikut https://www.google.com/search?q=[keyword yang mau kamu cari].
+
+Jika keyword mengandung spasi, maka ganti spasi tersebut dengan **%2B**. Contoh: https://www.google.com/search?q=isi%2Bkeyword%2Bdi%2Bsini.
+
+Untuk menampilkan gambar kurva di google, isi keyword dengan rumus parabola yang sudah kalian dapatkan tadi.
+
+Contoh:
+```
+Rumus umum parabola: y = ax^2 + bx + c
+
+Masukkan nilai a : 2
+Masukkan nilai b : 4
+Masukkan nilai c : 7
+
+Rumus parabola: y = 2x^2 + 4x + 7
+
+Masukkan nilai x : -1
+Nilai y pada x = -1 adalah 5
+
+Lihat gambar kurva di : (untuk a = 0 atau b = 0, gambar mungkin tidak akan keluar)
+https://www.google.com/search?q=2x^2+%2B+4x+%2B+7
+```
 
 ### Komponen penilaian
 
-[ ] Hasil output (95)
-[ ] < Penilaian lainnya > (xx)
-[ ] < Penilaian lainnya > (xx)
-[ ] Kerapihan kode (5)
+[ ] Hasil output (90)
+[ ] Kerapihan kode (10)
 [ ] Bonus (10)
-<!-- Penilaian bebas, ini hanya contoh -->
-<!-- Max nilai 110 -->
 
 ---
 

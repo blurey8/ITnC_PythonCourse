@@ -289,7 +289,7 @@ Total keuntungan     : 0
 
 ### Deskripsi Soal
 
-#### Pada suatu hari...
+#### Jadi, ceritanya...
 
 Todo adalah siswa yang rajin. Kemarin, gurunya memberikan PR matematika tentang luas dan keliling lingkaran. Namun, Todo sedang tidak bisa mengerjakannya karena ingin menonton anime favoritnya. Oleh karena itu, ia meminta tolong temannya di ITnC untuk membantunya mencari luas dan keliling lingkaran dengan cepat agar PR nya bisa diselesaikan besok pagi di kelas. Tidak. Dia tidak mau menyontek temannya karena dia tidak punya teman.
 
